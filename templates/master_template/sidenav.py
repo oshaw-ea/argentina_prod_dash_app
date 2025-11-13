@@ -21,7 +21,6 @@ def make_sidenav():
     pages = make_pages_list()
 
     pages_containers = [
-        # make_dashboard_container(pages),
         make_non_dashboard_container(pages),
     ]
 
@@ -51,28 +50,7 @@ def make_pages_list():
     return pages
 
 
-# def get_dashboard_pages():
-#     dash_pages = [
-#         PagesNames.PRODUCTION_DASHBOARD
-#     ]
-#     return dash_pages
-
-
-def make_dashboard_container(pages):
-#     dashboard_pages_names = get_dashboard_pages()
-#     pages = [page for page in pages if page.children.label in dashboard_pages_names]
-    item = EADrawerCollapsibleItem(
-        pages,
-        label="Dashboards",
-        className="sidenav__models",
-
-    )
-    return item
-
-
 def make_non_dashboard_container(pages):
-    # dashboard_pages_names = get_dashboard_pages()
-    # pages = [page for page in pages if page.children.label not in dashboard_pages_names]
     item = EADrawerCollapsibleItem(
         pages,
         label="Engine (BETA)",

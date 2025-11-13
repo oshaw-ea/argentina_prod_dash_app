@@ -1,8 +1,4 @@
 main {
-  padding: calc(var(--spacer) * 2);
-  flex: 1;
-}
-
-.page-layout .header a {
-  text-decoration: none;
+ padding-top: calc(var(--spacer) * 2);
+ flex: 1;
 }

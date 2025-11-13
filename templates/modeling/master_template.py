@@ -4,7 +4,7 @@ import dash_core_components as dcc
 
 from ea_dash_elements.utilities.loader_setting import LoadersSettings
 from ea_dash_elements.utilities.styles import card_style
-from templates.assets.tiles import RigCountTile, DrilledWellsTile, CompletionsTile, ProductionTile
+from templates.assets.tiles import DrilledWellsTile, CompletionsTile, ProductionTile
 from argentina_prod.configs.models_config import TimeManagement
 from pages.modeling.utilities import IndexMapping
 from helper_functions_ea.metadata.metadata_fields import EnergyProduct
@@ -31,19 +31,15 @@ class MasterTemplate:
             dbc.Row(
                 [
                     dbc.Col([
-                        RigCountTile(prefix=self.prefix, title='Rig count', index=IndexMapping.RIG_COUNT).make_tile(),
-                        CompletionsTile(prefix=self.prefix, title='Completions',
-                                        index=IndexMapping.COMPLETIONS).make_tile()
-                    ], width=6),
-
-                    dbc.Col([
                         DrilledWellsTile(prefix=self.prefix, title='Drilled wells',
                                          index=IndexMapping.DRILLED_WELLS).make_tile(),
                         ProductionTile(prefix=self.prefix, title='Production',
                                        index=IndexMapping.PRODUCTION).make_tile(),
-                        # TypeCurveTile(prefix=self.prefix, title='Type curve',
-                        #               index=IndexMapping.TYPE_CURVES
-                        #               ).make_tile()
+                    ], width=6),
+
+                    dbc.Col([
+                        CompletionsTile(prefix=self.prefix, title='Completions',
+                                        index=IndexMapping.COMPLETIONS).make_tile()
                     ], width=6)
                 ]
             ),
@@ -52,10 +48,6 @@ class MasterTemplate:
         return content
 
     def _make_selection_ribbon(self):
-        # basins_df = basins.get_metadata_df()
-        # basin_options = [{'label': row['display_name'], 'value': row['metavalue']} for i, row in basins_df.iterrows() if row['metavalue'] in basins.steo_basins]
-        # basin_options.append({'label': "Rest of L48 excl GOA",'value': basins.REST_OF_L48_METAVALUE})
-
         energy_product = EnergyProduct()
         energy_product_df = energy_product.get_metadata_df()
 
@@ -81,8 +73,6 @@ class MasterTemplate:
             dbc.CardBody([
                 dbc.Row([
 
-                    # dbc.Col([dcc.Dropdown(id=f'{self.prefix}basin-selection-ddown', options=basin_options, value=None,
-                    #                       placeholder='Select basin')], width=2),
                     dbc.Col([dcc.Dropdown(id=f'{self.prefix}energy-selection-ddown', options=energy_options, value=None,
                                           placeholder='Select energy product')], width=2),
                     dbc.Col([dcc.Dropdown(id=f'{self.prefix}scenario-type-ddown', options=scenario_options,
