@@ -1,0 +1,30 @@
+.sidenav .accordion .accordion-body {
+  padding: 0;
+}
+.sidenav .accordion .accordion-item {
+  border: 0;
+}
+.sidenav .accordion .accordion-header .accordion-button {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.sidenav .list-group-item.nav-link {
+  background-color: var(--bs-gray-200);
+}
+.sidenav .list-group-item.nav-link.active {
+  position: relative;
+  color: var(--bs-red);
+  border-color: var(--bs-list-group-border-color);
+}
+.sidenav .list-group-item.nav-link.active::before {
+  --negative-list-group-border-width: calc(
+    var(--bs-list-group-border-width) * -1
+  );
+  position: absolute;
+  right: var(--negative-list-group-border-width);
+  top: var(--negative-list-group-border-width);
+  bottom: var(--negative-list-group-border-width);
+  background-color: var(--bs-red);
+  width: 4px;
+  content: "";
+}

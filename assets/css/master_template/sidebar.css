@@ -1,0 +1,5 @@
+.sidebar .nav-link {
+  padding: var(--bs-nav-link-padding-y) 0;
+  color: var(--bs-light);
+  font-size: 24px;
+}

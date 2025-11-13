@@ -1,0 +1,10 @@
+.base-graph {
+  width: 90%;
+  margin: 0 auto;
+  aspect-ratio: 1.8;
+}
+
+.base-graph > div {
+  height: 100%;
+  width: 100%;
+}

@@ -1,0 +1,15 @@
+flask==2.3.3
+authlib==0.14.1
+flask-sqlalchemy==2.5.1
+dash==2.9.3
+dash_auth
+dash-bootstrap-components
+ea-dash==0.0.15
+pandas
+dash-bootstrap-templates
+# helper-functions-ea
+dash-dangerously-set-inner-html
+pytest
+dash-iconify==0.1.2
+dash-mantine-components==0.12.1
+requests
