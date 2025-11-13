@@ -9,7 +9,7 @@ from argentina_prod.configs.models_config import TimeManagement
 from pages.modeling.utilities import IndexMapping
 from helper_functions_ea.metadata.metadata_fields import EnergyProduct
 from argentina_prod.configs.scenarios import ScenarioTypes
-from helper_functions_ea import Logger
+
 
 class MasterTemplate:
     def __init__(self, prefix):

@@ -1,7 +1,7 @@
 from dash import register_page
 from pages.utilities import PagesNames, PagesOrder, PagesPrefix
 from templates.modeling.master_template import MasterTemplate
-# from pages.modeling.callbacks.modeling_callbacks import define_modeling_callbacks
+from pages.modeling.callbacks.modeling_callbacks import define_modeling_callbacks
 
 register_page(
     __name__,
@@ -14,6 +14,6 @@ register_page(
 def layout():
     return MasterTemplate(PagesPrefix.MODELING).make_template()
 
-# define_modeling_callbacks(prefix=PagesPrefix.MODELING)
+define_modeling_callbacks(prefix=PagesPrefix.MODELING)
 
 

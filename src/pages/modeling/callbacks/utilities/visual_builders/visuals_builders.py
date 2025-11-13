@@ -1,7 +1,6 @@
 import pandas as pd
 from dash.dash_table.Format import Format, Group
 from dateutil.relativedelta import relativedelta
-from helper_functions_ea import ShoojuTools
 from argentina_prod.configs.enums import ModelMetadata, ShoojuFields
 from typing import Union, List, Dict, Tuple, Optional, Any
 import plotly.graph_objects as go
@@ -9,7 +8,6 @@ import plotly.graph_objects as go
 
 from ea_dash_elements.utilities.visual_settings import VisualSettings
 from pages.utilities import ChartTitles
-from datetime import datetime, timezone
 
 
 class DataTypes:
@@ -43,14 +41,6 @@ class VisualsBuilder:
         data = self._make_data(df)
         return columns, data
 
-    @staticmethod
-    def make_total_table(df: pd.DataFrame) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-        total_df = df.copy().sum(axis=1).to_frame("Total")
-
-        columns = VisualsBuilder._make_columns(total_df)
-        data = VisualsBuilder._make_data(total_df)
-
-        return columns, data
 
     @staticmethod
     def update_play_level_data_from_totals(new_total_data, old_total_data, play_level_data):

@@ -1,8 +1,6 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
 import dash_table
-from plotly import graph_objs as go
-from argentina_prod.configs.enums import ModelMetadata
 
 from ea_dash_elements.utilities.loader_setting import LoadersSettings
 from ea_dash_elements.utilities.styles import card_style, tile_title_style

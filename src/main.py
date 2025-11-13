@@ -1,19 +1,12 @@
 import warnings
 from pathlib import Path
 import dash_bootstrap_components as dbc
-from dash import Dash, Input, Output, callback, ClientsideFunction
-from flask import (Flask,
-                   jsonify,
-                   redirect,
-                   session,
-                   url_for)
+from dash import Dash, Input, Output, callback
+from flask import (Flask)
 
 import os
-from urllib.parse import urlencode
-from auth import requires_auth, authorise_authenticate_dashviews
-from authlib.integrations.flask_client import OAuth
-from werkzeug.exceptions import HTTPException
 import logging
+
 from templates.master_template.master_template import make_master_template
 from templates.master_template.sidenav import make_sidenav
 
@@ -22,7 +15,7 @@ warnings.filterwarnings("ignore")
 # This is necessary when deploying code to Google App Engine.
 # App engine will work off a /workspace source, so we need to figure out
 # the path relative to a changing starting environment
-for p in Path('.').rglob('*'):
+for p in Path('..').rglob('*'):
     if str(p).endswith('pages'):
         pages_folder = str(p)
         break

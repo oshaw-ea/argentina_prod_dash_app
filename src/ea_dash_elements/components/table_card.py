@@ -1,6 +1,5 @@
 import pandas as pd
 
-from ea_dash_elements.utilities.styles import *
 from ea_dash_elements.utilities.loader_setting import LoadersSettings  #
 from ea_dash_elements.utilities.visual_settings import VisualSettings
 import plotly.graph_objects as go

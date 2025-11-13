@@ -1,7 +1,6 @@
 import dash_bootstrap_components as dbc
 from dash import html, page_registry
 from ea_dash import EADrawerItem, EADrawerCollapsibleItem
-from pages.utilities import PagesNames, PagesOrder
 
 
 def make_sidenav():
